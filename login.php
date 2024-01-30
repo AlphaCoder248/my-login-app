@@ -97,9 +97,6 @@
                 success: function(response) {
                   // Handle successful login
                   console.log(response);
-                  alert('Login successful!');
-                  // Redirect or perform any other action upon successful login
-                  window.location.replace("./details.php");
                 },
                 error: function(xhr, status, error) {
                   // Handle login failure
@@ -134,10 +131,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $servername = "localhost"; 
     $username = "newuser"; 
-    $password = "admin123"; 
+    $dbpassword = "admin123"; 
     $dbname = "login-form"; 
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $dbpassword, $dbname);
 
     // Check connection
     if ($conn->connect_error) {
@@ -154,17 +151,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     print_r($result) ;
 
     if ($result->num_rows === 1) {
-        echo "hionce";
         // User found, verify password
         $user = $result->fetch_assoc();
         print_r($user);
-        if (password_verify($password, $user['password'])) {
+        $user1 = $user['password'];
+        echo ".$password + .$user1";
+        if ($password == $user['password']) {
             // Password is correct, login successful
-            http_response_code(200); // OK
+            http_response_code(200); // OK
             echo "Login successful!";
         } else {
             // Password is incorrect
-            http_response_code(401); // Unauthorized
+            http_response_code(401); // Unauthorized
             echo "Incorrect password.";
         }
     } else {
