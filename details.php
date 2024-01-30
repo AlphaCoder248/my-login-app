@@ -19,7 +19,7 @@
                                 <form id="registrationForm">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email</label>
-                                        <input type="email" id="email" name="email" value="new@gmail.com" class="form-control form-control-lg" disabled/>
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg" disabled/>
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="firstName">First Name</label>
