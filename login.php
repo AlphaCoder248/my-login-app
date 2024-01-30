@@ -160,13 +160,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         print_r($user);
         if (password_verify($password, $user['password'])) {
             // Password is correct, login successful
-            http_response_code(200); // OK
-            echo "hii";
+            http_response_code(200); // OK
             echo "Login successful!";
         } else {
             // Password is incorrect
-            http_response_code(401); // Unauthorized
-            echo "hi2";
+            http_response_code(401); // Unauthorized
             echo "Incorrect password.";
         }
     } else {
