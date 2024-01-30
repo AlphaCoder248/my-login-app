@@ -154,8 +154,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // User found, verify password
         $user = $result->fetch_assoc();
         print_r($user);
-        $user1 = $user['password'];
-        echo ".$password + .$user1";
         if ($password == $user['password']) {
             // Password is correct, login successful
             http_response_code(200); // OK
