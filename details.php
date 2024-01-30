@@ -19,7 +19,7 @@
                                 <form id="registrationForm">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email</label>
-                                        <input type="email" id="email" name="email" class="form-control form-control-lg" disabled/>
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg"/>
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="firstName">First Name</label>
@@ -63,7 +63,7 @@
         $(document).ready(function(){
             // Function to get user details
             function getUserDetails() {
-                var email = "new@gmail.com"; 
+                var email = "12@gmail.com"; 
                 
                 $.ajax({
                     type: 'GET',
